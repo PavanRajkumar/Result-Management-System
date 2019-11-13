@@ -124,10 +124,10 @@ input[type=submit]:hover {
 <h2>Delete Record</h2>
 
 <div class="container">
-  <form action="/students_delete.php">
+  <form action="/students/students_del.php" method="post">
 
     <label for="lname">Enter USN of record to be Deleted</label>
-    <input type="text" id="usn" name="USN">
+    <input type="text" id="usn" name="usn">
     <input type="submit" value="Submit">
   </form>
 </div>
