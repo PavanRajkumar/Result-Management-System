@@ -20,9 +20,9 @@ if ($result->num_rows > 0) {
     // output data of each row
    // $fieldinfo=mysqli_fetch_fields($result);
         $val=array();
-    while($fieldinfo=mysqli_fetch_field($result)){      
+    while($fieldinfo=mysqli_fetch_field($result)){
                 $val[]=$fieldinfo->name;
-                echo '<th>'.$fieldinfo->name.'</th>' ; 
+                echo '<th>'.$fieldinfo->name.'</th>' ;
         }
     echo '</tr>';
         while($row = $result->fetch_assoc()) {
@@ -39,4 +39,3 @@ if ($result->num_rows > 0) {
 echo '</body></html>';
 $conn->close();
 ?>
-
