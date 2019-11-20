@@ -34,16 +34,43 @@ echo $result['passed'];
 
 $conn->close();
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~```
+<?php
+
+*/
+$servername = "localhost";
+$username = "pavan";
+$password = "password";
+$dbname = "DBMS_PROJECT";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo '<html><body>';
+$sql = "SELECT COUNT(*) as count_info FROM Subjects";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+   $row=$result->fetch_assoc()
+  echo $row["count_info"];
+}
+echo '</body></html>';
+$conn->close();
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+/*
 **************************************
 STORE THE VARIABLES
 var pass = "<?php echo $pass ?>";
 var fail = "<?php echo $fail ?>";
 **************************************
 
-*/
-?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -82,3 +109,7 @@ function drawChart() {
 
 </body>
 </html>
+
+*/
+
+?>
