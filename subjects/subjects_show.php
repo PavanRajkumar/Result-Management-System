@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 echo '<html><head><style>table, th, td {border: 1px solid black;}</style></head><body>';
 
 echo '<br><br>Subjects Table:<br><table><tr>';
-$sql = "SELECT * FROM Subjects";
+$sql = "CALL disp_subs()";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row

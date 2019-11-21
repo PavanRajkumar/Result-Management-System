@@ -71,7 +71,7 @@ input[type=submit]:hover {
 <h2>Insert Record</h2>
 
 <div class="container">
-  <form action="/ia_insert.php" method="post">
+  <form action="ia_insert.php" method="post">
 
     <label for="fname">Subject Code</label>
     <input type="text" id="fname" name="subcode">
@@ -91,9 +91,6 @@ input[type=submit]:hover {
     <label for="batch">IAT3</label>
     <input type="text" id="deptno" name="ia3">
 
-    <label for="batch">Final IAT</label>
-    <input type="text" id="deptno" name="fia">
-
     <input type="submit" value="Submit">
   </form>
 </div>
@@ -102,7 +99,7 @@ input[type=submit]:hover {
 <h2>Update Record</h2>
 
 <div class="container">
-  <form action="/ia/ia_update.php" method="post">
+  <form action="ia_update.php" method="post">
 
     <label for="lname">Enter USN of record to be updated</label>
     <input type="text" id="usn" name="usnc">
@@ -132,9 +129,6 @@ input[type=submit]:hover {
 
     <label for="batch">IAT3</label>
     <input type="text" id="deptno" name="iat3">
-
-    <label for="batch">Final IAT</label>
-    <input type="text" id="deptno" name="final_iat">
     
 
     <input type="submit" value="Submit">
@@ -144,10 +138,17 @@ input[type=submit]:hover {
 <h2>Delete Record</h2>
 
 <div class="container">
-  <form action="/ia/ia_del.php" method="post">
+  <form action="ia_del.php" method="post">
 
     <label for="lname">Enter USN of record to be deleted</label>
     <input type="text" id="usn" name="usn">
+
+    <label for="fname">Subject Code</label>
+    <input type="text" id="fname" name="subcode">
+
+    <label for="batch">Semester</label>
+    <input type="text" id="batch" name="sem">
+
     <input type="submit" value="Submit">
   </form>
 </div>

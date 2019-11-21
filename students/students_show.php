@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 echo '<html><head><br>Students Table :<br><style>table, th, td {border: 1px solid black;}</style></head><body><table><tr>';
-$sql = "SELECT * FROM Students";
+$sql = "CALL disp_student()";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row

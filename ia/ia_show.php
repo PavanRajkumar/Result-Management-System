@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 echo '<html><head><style>table, th, td {border: 1px solid black;}</style></head><body>';
 
 echo '<br><br>Internal Marks :<br><table><tr>';
-$sql = "SELECT * FROM Internal_Marks";
+$sql = "CALL disp_ia_marks()";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row

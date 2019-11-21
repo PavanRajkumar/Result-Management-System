@@ -1,0 +1,81 @@
+/*Departments table*/
+insert into Departments values('cse',1,'Raveesha');
+insert into Departments values('mechanical',2,'Sunil Kumar');
+insert into Departments values('civil',3,'Shashikala');
+
+/*Students table */
+insert into Students values(1,'ASHISH GUPTA',1,1,'2019-2020');
+insert into Students values(2,'BHARATH P A',1,2,'2019-2020');
+insert into Students values(3,'BHOOMIKA M',1,3,'2019-2020');
+insert into Students values(4,'BRIJESH BABU',2,1,'2020-2021');
+insert into Students values(5,'CHANDAN N',2,2,'2020-2021');
+insert into Students values(6,'SASIDHAR REDDY',2,3,'2020-2021');
+insert into Students values(7,'DHEERAJ J C',3,1,'2021-2022');
+insert into Students values(8,'EBENEZER B',3,2,'2021-2022');
+insert into Students values(9,'FOZAIL AKRAM',3,3,'2021-2022');
+insert into Students values(10,'GANESH J K',4,1,'2022-2023');
+insert into Students values(11,'KRISHNA KESHAN',4,2,'2022-2023');
+insert into Students values(12,'LIKITH KUMAR K',4,3,'2022-2023');
+insert into Students values(13,'MAMTHA M V',5,1,'2023-2024');
+insert into Students values(14,'NISARGA K',5,2,'2023-2024');
+insert into Students values(15,'PAVAN RAJKUMAR MAGESH',5,3,'2023-2024');
+insert into Students values(16,'PRAKHYATH JAIN',6,1,'2024-2025');
+insert into Students values(17,'PRATEEK KUMAR SINGH',6,2,'2024-2025');
+insert into Students values(18,'PRATYUSH SINHA',6,3,'2024-2025');
+insert into Students values(19,'RICHARD DELWIN MYLOTH',7,1,'2025-2026');
+insert into Students values(20,'RISHAB MOHAN',7,2,'2025-2026');
+insert into Students values(21,'ROSHNI KUNDU',7,3,'2025-2026');
+insert into Students values(22,'S RAGHAV TEJAS',8,1,'2026-2027');
+insert into Students values(23,'SAGUN',8,2,'2026-2027');
+insert into Students values(24,'SMRITHY C',8,3,'2026-2027');
+insert into Students values(25,'SOURABH RAJENDRA AWATE',1,1,'2019-2020');
+insert into Students values(26,'SOURAV KUMAR GIRI',2,2,'2020-2021');
+insert into Students values(27,'SUGYAN ANAND MAHARANA',3,3,'2021-2022');
+
+/*Subjects table*/
+insert into Subjects values('code1','sub1',4,1);
+insert into Subjects values('code2','sub2',4,1);
+insert into Subjects values('code3','sub3',4,1);
+insert into Subjects values('code4','sub4',3,2);
+insert into Subjects values('code5','sub5',3,2);
+insert into Subjects values('code6','sub6',3,2);
+insert into Subjects values('code7','sub7',5,3);
+insert into Subjects values('code8','sub8',5,3);
+insert into Subjects values('code9','sub9',5,3);
+insert into Subjects values('code10','sub10',4,1);
+insert into Subjects values('code11','sub11',4,1);
+insert into Subjects values('code12','sub12',4,1);
+
+/*Internal_Marks table*/
+insert into Internal_Marks values(1,2,'code1',45,50,49,30);
+insert into Internal_Marks values(1,2,'code2',46,50,46,28);
+insert into Internal_Marks values(2,1,'code3',47,50,43,28);
+insert into Internal_Marks values(2,1,'code4',48,50,44,29);
+
+
+/*External_Marks table */
+insert into External_Marks values(22,2,'122',123,130,'A','PASS');
+insert into External_Marks values(22,2,'122',123,130,'A','PASS');
+insert into External_Marks values(22,2,'122',123,130,'A','PASS');
+insert into External_Marks values(22,2,'122',123,130,'A','PASS');
+insert into External_Marks values(22,2,'122',123,130,'A','PASS');
+
+
+create trigger final_ia_upd after update on Internal_Marks for each row update Internal_Marks set Internal_Marks.final_iat = (iat1+iat2+iat3)/3;
+create trigger final_ia_ins after insert on Internal_Marks for each row update Internal_Marks set Internal_Marks.final_iat = (iat1+iat2+iat3)/3;
+
+delimiter $$
+create procedure disp_student() begin select * from Students; end$$
+create procedure disp_dept() begin select * from Departments; end$$
+create procedure disp_subs() begin select * from Subjects; end$$
+create procedure disp_ia_marks() begin select * from Internal_Marks; end$$
+create procedure disp_ea_marks() begin select * from External_Marks; end$$
+delimiter ;
+
+
+//change stmt in php files
+call disp_student()
+call disp_dept()
+call disp_subs()
+call disp_ia_marks()
+call disp_ea_marks()
