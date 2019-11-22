@@ -1,0 +1,2 @@
+create trigger str_trig after insert on Students for each row update Departments,Students set strength=strength+1 where Students.dno=NEW.dno;
+
