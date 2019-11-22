@@ -1,0 +1,20 @@
+delimiter $$
+create trigger str_before_dept_trig before insert on Departments for each row begin set NEW.strength=0; end $$
+delimiter ;
+create trigger str_afterins_student_trig after insert on Students for each row update Departments set strength=strength+1 where Departments.dno=NEW.dno;
+create trigger str_afterdel_student_trig after delete on Students for each row update Departments set strength=strength-1 where Departments.dno=OLD.dno;
+
+delimiter $$
+create procedure disp_student() begin select * from Students; end$$
+create procedure disp_dept() begin select * from Departments; end$$
+create procedure disp_subs() begin select * from Subjects; end$$
+create procedure disp_ia_marks() begin select * from Internal_Marks; end$$
+create procedure disp_ea_marks() begin select * from External_Marks; end$$
+create procedure update_final(IN a int ,IN b int, IN c varchar(30))
+begin
+update Internal_Marks set final_iat=(iat1+iat2+iat3)/3 where subcode=c and usn=a and sem=b;
+end $$
+
+delimiter ;
+
+

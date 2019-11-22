@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 echo '<html><head><h1>Result Analysis</h1></head><body>';
 
 
-$sql = "SELECT COUNT(*) as fail from External_Marks where result='F' and subcode='".$_POST["subcode"]."'";
+$sql = "SELECT COUNT(*) as fail from External_Marks where result='FAIL' and subcode='".$_POST["subcode"]."'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
    $row=$result->fetch_assoc();
@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
 
 echo "<p> </p>";
 
-$sql = "SELECT COUNT(*) as pass from External_Marks where result='P' and subcode='".$_POST["subcode"]."'";
+$sql = "SELECT COUNT(*) as pass from External_Marks where result='PASS' and subcode='".$_POST["subcode"]."'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
    $row=$result->fetch_assoc();

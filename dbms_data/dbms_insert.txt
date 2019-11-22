@@ -1,7 +1,7 @@
 /*Departments table*/
-insert into Departments values('cse',1,'Raveesha');
-insert into Departments values('mechanical',2,'Sunil Kumar');
-insert into Departments values('civil',3,'Shashikala');
+insert into Departments(name,dno,hod) values('cse',1,'Raveesha');
+insert into Departments(name,dno,hod) values('mechanical',2,'Sunil Kumar');
+insert into Departments(name,dno,hod) values('civil',3,'Shashikala');
 
 /*Students table */
 insert into Students values(1,'ASHISH GUPTA',1,1,'2019-2020');
@@ -51,31 +51,14 @@ insert into Internal_Marks values(1,2,'code1',45,50,49,30);
 insert into Internal_Marks values(1,2,'code2',46,50,46,28);
 insert into Internal_Marks values(2,1,'code3',47,50,43,28);
 insert into Internal_Marks values(2,1,'code4',48,50,44,29);
+insert into Internal_Marks values(4,2,'code4',48,50,44,29);
 
 
 /*External_Marks table */
-insert into External_Marks values(22,2,'122',123,130,'A','PASS');
-insert into External_Marks values(22,2,'122',123,130,'A','PASS');
-insert into External_Marks values(22,2,'122',123,130,'A','PASS');
-insert into External_Marks values(22,2,'122',123,130,'A','PASS');
-insert into External_Marks values(22,2,'122',123,130,'A','PASS');
+insert into External_Marks values(1,2,'code1',123,130,'A','PASS');
+insert into External_Marks values(1,2,'code2',123,130,'A','PASS');
+insert into External_Marks values(2,1,'code3',123,130,'A','PASS');
+insert into External_Marks values(2,1,'code4',123,130,'A','PASS');
+insert into External_Marks values(4,2,'code4',123,130,'G','FAIL');
 
 
-create trigger final_ia_upd after update on Internal_Marks for each row update Internal_Marks set Internal_Marks.final_iat = (iat1+iat2+iat3)/3;
-create trigger final_ia_ins after insert on Internal_Marks for each row update Internal_Marks set Internal_Marks.final_iat = (iat1+iat2+iat3)/3;
-
-delimiter $$
-create procedure disp_student() begin select * from Students; end$$
-create procedure disp_dept() begin select * from Departments; end$$
-create procedure disp_subs() begin select * from Subjects; end$$
-create procedure disp_ia_marks() begin select * from Internal_Marks; end$$
-create procedure disp_ea_marks() begin select * from External_Marks; end$$
-delimiter ;
-
-
-//change stmt in php files
-call disp_student()
-call disp_dept()
-call disp_subs()
-call disp_ia_marks()
-call disp_ea_marks()

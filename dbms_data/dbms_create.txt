@@ -1,10 +1,12 @@
 create database DBMS_PROJECT;
 use DBMS_PROJECT;
-create table Departments(name varchar(100),dno int primary key,hod varchar(100));
+create table Departments(name varchar(100),dno int primary key,hod varchar(100),strength int);
 create table Students(usn int primary key,name varchar(100),cur_sem int,dno int ,batch varchar(9),foreign key(dno) references Departments(dno) on update cascade on delete set null); 
 create table Subjects(subcode varchar(20) primary key,name varchar(50),credits int,dno int,foreign key(dno) references Departments(dno) on delete cascade on update cascade);
 create table Internal_Marks(usn int,sem int,subcode varchar(20),iat1 int,iat2 int,iat3 int,final_iat int,foreign key(usn) references Students(usn) on delete cascade on update cascade,foreign key(subcode) references Subjects(subcode) on delete cascade on update cascade,primary key(usn,sem,subcode));
 create table External_Marks(usn int,sem int,subcode varchar(20),external int,total int,grade char(1),result varchar(6),foreign key(usn) references Students(usn) on delete cascade on update cascade,foreign key(subcode) references Subjects(subcode) on delete cascade on update cascade,primary key(usn,sem,subcode));
 
 
+create user 'pavan'@'localhost' identified by 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'pavan'@'localhost' IDENTIFIED BY 'password';
 

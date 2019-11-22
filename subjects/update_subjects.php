@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $i=0;
-$arr=array("name","subcode","credits","dno");
+$arr=array("name","credits","dno","subcode");
 while($i<5){
 	if($_POST[$arr[$i]]!=NULL){
 		if($arr[$i]=="name"||$arr[$i]=="subcode")

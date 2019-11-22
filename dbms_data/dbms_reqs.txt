@@ -1,6 +1,0 @@
-install mariadb-server
-fill database
-install nodejs
-install npm
-install mysql for nodejs using npm
-

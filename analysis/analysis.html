@@ -68,7 +68,7 @@ input[type=submit]:hover {
 
 <h1>Result Analysis<h1>
 <p> </p>
-<h2>Enter Details</h2>
+<h2>Pass/fail percentage</h2>
 
 <div class="container">
   <form action="analysis.php" method="post">
@@ -77,6 +77,17 @@ input[type=submit]:hover {
     <input type="text" id="subcode" name="subcode">
 
     <input type="submit" value="Submit">
+  </form>
+</div>
+<h2>Students...</h2>
+
+<div class="container">
+  <form action="passed.php" method="post">
+    <input type="submit" value="Passed Students ">
+  </form>
+  <br><br>
+  <form action="failed.php" method="post">
+    <input type="submit" value="Failed Students " >
   </form>
 </div>
 

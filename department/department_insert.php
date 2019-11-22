@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO Departments values('".$_POST["Dname"]."',".$_POST["Dno"].",'".$_POST["HOD"]."')";
+$sql = "INSERT INTO Departments(name,dno,hod) values('".$_POST["Dname"]."',".$_POST["Dno"].",'".$_POST["HOD"]."')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
