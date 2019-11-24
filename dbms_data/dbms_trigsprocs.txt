@@ -1,5 +1,6 @@
 delimiter $$
 create trigger str_before_dept_trig before insert on Departments for each row begin set NEW.strength=0; end $$
+create trigger trig before insert on External_Marks for each row begin if(NEW.total > 80) then set NEW.grade='A'; set NEW.result='PASS'; elseif(NEW.total > 70) then set NEW.grade='B';set NEW.result='PASS'; elseif(NEW.total > 60) then set NEW.grade='C';set NEW.result='FAIL'; else set NEW.grade='D';set NEW.result='FAIL'; END if; End $$
 delimiter ;
 create trigger str_afterins_student_trig after insert on Students for each row update Departments set strength=strength+1 where Departments.dno=NEW.dno;
 create trigger str_afterdel_student_trig after delete on Students for each row update Departments set strength=strength-1 where Departments.dno=OLD.dno;

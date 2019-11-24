@@ -71,7 +71,7 @@ input[type=submit]:hover {
 <h2>Insert Record</h2>
 
 <div class="container">
-  <form action="/ea_insert.php" method="post">
+  <form action="ea_insert.php" method="post">
 
     <label for="fname">Subject Code</label>
     <input type="text" id="fname" name="subcode">
@@ -87,13 +87,7 @@ input[type=submit]:hover {
 
     <label for="batch">Total</label>
     <input type="text" id="deptno" name="total">
-
-    <label for="batch">Result</label>
-    <input type="text" id="deptno" name="result">
-
-    <label for="batch">Grade</label>
-    <input type="text" id="deptno" name="grade">
-
+    
     <input type="submit" value="Submit">
   </form>
 </div>
@@ -102,7 +96,7 @@ input[type=submit]:hover {
 <h2>Update Record</h2>
 
 <div class="container">
-  <form action="/ea/ea_update.php" method="post">
+  <form action="ea_update.php" method="post">
 
  
     <label for="lname">Enter USN of record to be updated</label>
@@ -131,12 +125,6 @@ input[type=submit]:hover {
     <label for="batch">Total</label>
     <input type="text" id="deptno" name="total">
 
-    <label for="batch">Grade</label>
-    <input type="text" id="deptno" name="grade">
-
-    <label for="batch">Result</label>
-    <input type="text" id="deptno" name="result">
-
     <input type="submit" value="Submit">
   </form>
 </div>
@@ -144,7 +132,7 @@ input[type=submit]:hover {
 <h2>Delete Record</h2>
 
 <div class="container">
-  <form action="/ea/ea_del.php" method="post">
+  <form action="ea_del.php" method="post">
 
     <label for="lname">Enter USN of record to be deleted</label>
     <input type="text" id="usn" name="usn">

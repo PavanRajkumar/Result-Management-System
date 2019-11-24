@@ -47,18 +47,17 @@ insert into Subjects values('code11','sub11',4,1);
 insert into Subjects values('code12','sub12',4,1);
 
 /*Internal_Marks table*/
-insert into Internal_Marks values(1,2,'code1',45,50,49,30);
-insert into Internal_Marks values(1,2,'code2',46,50,46,28);
-insert into Internal_Marks values(2,1,'code3',47,50,43,28);
-insert into Internal_Marks values(2,1,'code4',48,50,44,29);
-insert into Internal_Marks values(4,2,'code4',48,50,44,29);
+insert into Internal_Marks(usn,sem,subcode,iat1,iat2,iat3) values(1,2,'code1',45,50,49);
+insert into Internal_Marks(usn,sem,subcode,iat1,iat2,iat3) values(1,2,'code2',46,50,46);
+insert into Internal_Marks(usn,sem,subcode,iat1,iat2,iat3) values(2,1,'code3',47,50,43);
+insert into Internal_Marks(usn,sem,subcode,iat1,iat2,iat3) values(2,1,'code4',48,50,44);
+insert into Internal_Marks(usn,sem,subcode,iat1,iat2,iat3) values(4,2,'code4',48,50,44);
 
 
 /*External_Marks table */
-insert into External_Marks values(1,2,'code1',123,130,'A','PASS');
-insert into External_Marks values(1,2,'code2',123,130,'A','PASS');
-insert into External_Marks values(2,1,'code3',123,130,'A','PASS');
-insert into External_Marks values(2,1,'code4',123,130,'A','PASS');
-insert into External_Marks values(4,2,'code4',123,130,'G','FAIL');
-
-
+insert into External_Marks(usn,sem,subcode,external,total) values(1,2,'code1',123,130);
+insert into External_Marks(usn,sem,subcode,external,total) values(1,2,'code2',123,130);
+insert into External_Marks(usn,sem,subcode,external,total) values(2,1,'code3',123,130);
+insert into External_Marks(usn,sem,subcode,external,total) values(2,1,'code4',123,130);
+insert into External_Marks(usn,sem,subcode,external,total) values(4,2,'code4',123,130);
+insert into External_Marks(usn,sem,subcode,external,total) values(1,6,'code3',123,130);
