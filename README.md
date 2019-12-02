@@ -25,9 +25,9 @@ open a terminal and enter
 
 The mysql prompt should appear, now create a database by running the command
 
-<code>create user 'pavan'@'localhost' identified by 'password';</code>
-<code>GRANT ALL PRIVILEGES ON *.* TO 'pavan'@'localhost' IDENTIFIED BY 'password';</code>
-<code>create database DBMS_PROJECT;</code>
+<code>create user 'pavan'@'localhost' identified by 'password';</code><br></br>
+<code>GRANT ALL PRIVILEGES ON *.* TO 'pavan'@'localhost' IDENTIFIED BY 'password';</code><br></br>
+<code>create database DBMS_PROJECT;</code><br></br>
 <code>quit;</code>
 
 On terminal run the project.sql file using
