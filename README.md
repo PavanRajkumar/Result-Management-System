@@ -25,6 +25,8 @@ sudo mysql
 
 The mysql prompt should appear, now create a database by running the command
 
+create user 'pavan'@'localhost' identified by 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'pavan'@'localhost' IDENTIFIED BY 'password';
 create database DBMS_PROJECT;
 quit;
 
