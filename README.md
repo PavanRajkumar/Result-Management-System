@@ -5,10 +5,10 @@ Steps for Use:
 Step 1: Install dependencies
 Execute the following commands to install LAMP stack:
 
-<code>sudo apt-get update</code>
-sudo apt-get install apache2
-sudo apt-get install mysql-server
-sudo apt-get install php libapache2-mod-php php-mysql
+<code>sudo apt-get update</code><br></br>
+<code>sudo apt-get install apache2</code><br></br>
+<code>sudo apt-get install mysql-server</code><br></br>
+<code>sudo apt-get install php libapache2-mod-php php-mysql</code>
 
 Step 2: Place source code in correct directory
 Copy the source code into var/www/html directory
@@ -16,29 +16,29 @@ Copy the source code into var/www/html directory
 OR
 
 Execute below command in the directory var/www/html/ if source code not available
-git clone https://github.com/rajkumar-99/Result-Management-System.git
+<code>git clone https://github.com/rajkumar-99/Result-Management-System.git
 
 Step 3: Setting up database
 open a terminal and enter
 
-sudo mysql
+<code>sudo mysql
 
 The mysql prompt should appear, now create a database by running the command
 
-create user 'pavan'@'localhost' identified by 'password';
+<code>create user 'pavan'@'localhost' identified by 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'pavan'@'localhost' IDENTIFIED BY 'password';
 create database DBMS_PROJECT;
-quit;
+quit;</code>
 
 On terminal run the project.sql file using
 
-mysql -u <username> -p DBMS_PROJECT < project.sql
+<code>mysql -u <username> -p DBMS_PROJECT < project.sql
                                                  
 Step 4: Start the servers
 on terminal execute the commands
 
-sudo /etc/init.d/mysql start
-sudo /etc/init.d/apache2 start
+<code>sudo /etc/init.d/mysql start
+<code>sudo /etc/init.d/apache2 start
 
 Step 5: Run the program
 navigate to /var/www/html and double click the home.html file to begin using
