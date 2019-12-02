@@ -5,7 +5,7 @@ Steps for Use:
 Step 1: Install dependencies
 Execute the following commands to install LAMP stack:
 
-sudo apt-get update
+<code>sudo apt-get update</code>
 sudo apt-get install apache2
 sudo apt-get install mysql-server
 sudo apt-get install php libapache2-mod-php php-mysql
