@@ -166,14 +166,23 @@ function sortTable(n) {
       y = rows[i + 1].getElementsByTagName("TD")[n];
       /* Check if the two rows should switch place,
       based on the direction, asc or desc: */
+      if (!isNaN(parseInt(x.innerHTML.toLowerCase()))){
+      	pa=parseInt(x.innerHTML.toLowerCase());
+      	qa=parseInt(y.innerHTML.toLowerCase());
+      }
+      else {
+      	pa=x.innerHTML.toLowerCase();
+      	qa=y.innerHTML.toLowerCase();
+      }
+
       if (dir == "asc") {
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        if (pa > qa) {
           // If so, mark as a switch and break the loop:
           shouldSwitch = true;
           break;
         }
       } else if (dir == "desc") {
-        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+        if (pa < qa) {
           // If so, mark as a switch and break the loop:
           shouldSwitch = true;
           break;
